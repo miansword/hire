@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>东海应聘测试题二</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<section id="main">
+	  <div class="swiper-container">
+	    <div class="swiper-wrapper">
+		  	 <div class="swiper-slide page-one">
+				<img src="images/title_01.png" class="img-responsive animated fadeOutRight" id="fst-title"/>
+				<img src="images/small-title_03.png" class="img-responsive animated bounceInUp" id="sub-title"/>
+				<img src="images/slogn-home.png" class="img-responsive animated lightSpeedIn" id="tri-title"/>
+				<div id="down-arrow" class="animated bounce">
+		  <i class="fa fa-angle-double-down fa-4"></i>
+		 </div>
+			 </div>
+			 <div class="swiper-slide page-two">
+			    <h1 class="animated flipInX">职业介绍</h1>
+			 </div>
+			 <div class="swiper-slide page-three">
+			    <h1 class="animated fadeInLeft">真武</h1>
+			    <div class="text animated fadeInRight">
+			    	<p>武当真武为正宗道家玄门，秉承“大道不远，真我存心，自然成武，天人合一”之念，以剑御气、气透冲霄，乃立“非真武不足当”之威名。
+现任掌门张梦白</p>
+			    </div>
+				<img src="images/role-1.jpg" class="img-responsive animated wobble" id="fst-title"/>
+			 </div>
+		 	<div class="swiper-slide page-four">
+		 		<h1 class="animated fadeInLeft">丐帮</h1>
+			    <div class="text animated fadeInRight">
+			    	<p>丐帮乃天下第一大帮，“大隐隐于市”，逍遥纵意于市井之中。其随身不佩刀剑，以空手入白刃的近身缠斗取胜。
+现任掌门江匡</p>
+			    </div>
+				<img src="images/role-2.jpg" class="img-responsive animated wobble" id="fst-title"/>
+		 	</div>
+		 	<div class="swiper-slide page-five">
+		 		<h1 class="animated fadeInLeft">神威</h1>
+			    <div class="text animated fadeInRight">
+			    	<p>神威本是源自军旅的门派，故而无论是性格还是武功都带着军旅出身的特点，注重实战、刚猛霸道、勇往直前。
+现任掌门韩学信</p>
+			    </div>
+				<img src="images/role-3.jpg" class="img-responsive animated wobble" id="fst-title"/>
+		 	</div>
+		 </div>
+		 </div>
+		 <div id="playMusic" class="allPlay">
+		 <i class="fa fa-music"></i>
+		 	<audio id="musicPlayer" src="music/1.mp3" controls="controls" autoplay="autoplay" style="pointer-events:none;display:none;width:0!important;height:0!important;"></audio>
+		 </div>
+	  </section>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+	<script>
+	$(function(){
+		$(window).load(function() {
+			$('.swiper-slide-active').siblings('.swiper-slide').find('.animated').hide();
+		})
+		$("#playMusic").click(function(){
+			$(this).toggleClass('allPlay');
+			if($(this).hasClass('allPlay')){
+				$('#musicPlayer')[0].play();
+			}else{
+				$('#musicPlayer')[0].pause();
+			}
+		})
+       var mySwiper = new Swiper('.swiper-container',{
+        pagination: false,
+		loop:false,
+		mode:'vertical',
+		grabCursor: true,
+		paginationClickable: true,
+		onTouchEnd:function(swiper){
+			$('.swiper-slide-active').siblings('.swiper-slide').find('.animated').hide();
+			$('.swiper-slide-active').find('.animated').show();
+		}
+  })
+	})
+  </script>
+</body>
+</html>
